@@ -4,8 +4,8 @@
 #include "bitmap.h"
 #include <string>
 using namespace std;
-bool validpic(Bitmap image,int no,int &sizex,int &sizey);
-int avg (int a , int b,int c , int d , int e,int f);
+bool validpic(Bitmap,int ,int &,int &);
+int avg (int, int,int, int, int ,int);
 
 int main()
 {
@@ -23,15 +23,15 @@ int main()
 	Pixel rgb;
 	string fname;
 
-	/* Ask for files from user until they enter "done" or for 10 names*/
-	while((no<10) &&(fname != "done"))
+	/* Ask for files from user until they enter "done" or "DONE or for 10 names*/
+	while((no<10) &&(fname != "done") && (fname != "DONE"))
 	{
 	cout << "Enter Filename for picture " <<no+1<<" :";
 	cin >>fname;
 	
 	
 	/*if the input is not "done"*/
-	if(fname != "done")
+	if((fname != "done")&&(fname!="DONE"))
 	{	
 	/* put the file to image */
 	image[no].open(fname);	
